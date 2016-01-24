@@ -1,0 +1,24 @@
+EESchema-LIBRARY Version 2.3
+#encoding utf-8
+#
+# CUT-1
+#
+DEF CUT-1 CT 0 1 Y N 1 F N
+F0 "CT" -5 80 31 H V C CNN
+F1 "CUT-1" 0 -75 31 H V C CNN
+F2 "" 0 -1200 50 H V C CNN
+F3 "" 0 -1200 50 H V C CNN
+$FPLIST
+ Pin_Header_Straight_2X01
+$ENDFPLIST
+DRAW
+A -55 0 50 843 -843 0 1 0 N -50 50 -50 -50
+A 55 0 50 957 -957 0 1 0 N 50 50 50 -50
+S -100 50 100 -50 0 1 0 N
+S -5 10 5 -10 0 1 0 F
+X P1 1 -250 0 150 R 50 50 1 1 P
+X P2 2 250 0 150 L 50 50 1 1 P
+ENDDRAW
+ENDDEF
+#
+#End Library
