@@ -972,9 +972,9 @@ Wire Wire Line
 	4650 3650 4650 1400
 Connection ~ 4150 3650
 Wire Wire Line
-	4600 3550 4600 1700
+	4600 1450 4600 3550
 Wire Wire Line
-	4600 1700 4200 1700
+	1850 1450 4600 1450
 Connection ~ 4200 3550
 $Comp
 L +5V #PWR08
@@ -1007,15 +1007,15 @@ Wire Wire Line
 Wire Wire Line
 	1850 550  3050 550 
 Wire Wire Line
-	3050 550  4200 550 
-Wire Wire Line
-	4200 550  4350 550 
+	3050 550  4350 550 
 Wire Wire Line
 	4350 550  5500 550 
 Wire Wire Line
 	1850 550  1850 900 
 Wire Wire Line
-	1850 900  1850 900 
+	1850 900  1850 1100
+Wire Wire Line
+	1850 1100 1850 1450
 Wire Wire Line
 	1850 900  2200 900 
 Wire Wire Line
@@ -1035,15 +1035,15 @@ Connection ~ 4350 550
 Wire Wire Line
 	5850 1000 5550 1000
 Wire Wire Line
-	5550 1000 5550 1400
+	5550 1400 5550 1000
 Wire Wire Line
-	5550 1400 4650 1400
+	1900 1400 3100 1400
 Wire Wire Line
-	4650 1400 4400 1400
+	3100 1400 4400 1400
 Wire Wire Line
-	4400 1400 3100 1400
+	4400 1400 4650 1400
 Wire Wire Line
-	3100 1400 1900 1400
+	4650 1400 5550 1400
 Wire Wire Line
 	1900 1400 1900 1000
 Wire Wire Line
@@ -1058,9 +1058,6 @@ Wire Wire Line
 Wire Wire Line
 	4400 1000 4400 1400
 Connection ~ 4400 1400
-Wire Wire Line
-	4200 1700 4200 550 
-Connection ~ 4200 550 
 Connection ~ 4650 1400
 $Comp
 L CONN_01X07 PN1
@@ -1095,8 +1092,6 @@ F 3 "" H 2200 1300 50  0000 C CNN
 	1    2200 1300
 	0    -1   -1   0   
 $EndComp
-Wire Wire Line
-	1850 900  1850 1100
 Wire Wire Line
 	1850 1100 2200 1100
 Connection ~ 1850 900 
@@ -1274,4 +1269,5 @@ F 3 "" H 4700 800 50  0000 C CNN
 	1    4700 800 
 	0    1    1    0   
 $EndComp
+Connection ~ 1850 1100
 $EndSCHEMATC
