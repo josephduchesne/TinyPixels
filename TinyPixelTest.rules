@@ -1,0 +1,102 @@
+
+(rules PCB TinyPixelTest
+  (snap_angle 
+    fortyfive_degree
+  )
+  (autoroute_settings
+    (fanout on)
+    (autoroute on)
+    (postroute on)
+    (vias on)
+    (via_costs 50)
+    (plane_via_costs 5)
+    (start_ripup_costs 100)
+    (start_pass_no 2853)
+    (layer_rule F.Cu
+      (active on)
+      (preferred_direction horizontal)
+      (preferred_direction_trace_costs 1.0)
+      (against_preferred_direction_trace_costs 2.0)
+    )
+    (layer_rule B.Cu
+      (active on)
+      (preferred_direction vertical)
+      (preferred_direction_trace_costs 1.0)
+      (against_preferred_direction_trace_costs 2.0)
+    )
+  )
+  (rule
+    (width 250.0)
+    (clear 200.2)
+    (clear 125.0 (type smd_to_turn_gap))
+    (clear 400.2 (type default_POWAR))
+    (clear 50.0 (type smd_smd))
+    (clear 400.2 (type smd_POWAR))
+    (clear 400.2 (type "kicad_default"_POWAR))
+    (clear 400.2 (type POWAR_POWAR))
+  )
+  (padstack "Via[0-1]_600:400_um"
+    (shape
+      (circle F.Cu 600.0 0.0 0.0)
+    )
+    (shape
+      (circle B.Cu 600.0 0.0 0.0)
+    )
+    (attach off)
+  )
+  (via 
+    "Via[0-1]_600:400_um" "Via[0-1]_600:400_um" default
+  )
+  (via 
+    "Via[0-1]_600:400_um-kicad_default" "Via[0-1]_600:400_um" "kicad_default"
+  )
+  (via 
+    "Via[0-1]_600:400_um-POWAR" "Via[0-1]_600:400_um" POWAR
+  )
+  (via_rule
+    default "Via[0-1]_600:400_um"
+  )
+  (via_rule
+    "kicad_default" "Via[0-1]_600:400_um-kicad_default"
+  )
+  (via_rule
+    POWAR "Via[0-1]_600:400_um-POWAR"
+  )
+  (class default
+    (clearance_class default)
+    (via_rule default)
+    (rule
+      (width 250.0)
+    )
+    (circuit 
+      (use_layer F.Cu B.Cu)
+    )
+  )
+  (class "kicad_default"
+    "Net-(C1-Pad1)" "Net-(CT0-Pad1)" "Net-(CT1-Pad1)" "Net-(CT2-Pad1)" "Net-(CT3-Pad1)" "Net-(CT4-Pad1)" "Net-(CT5-Pad1)" "Net-(ESP-1-Pad1)"
+    "Net-(ESP-1-Pad4)" "Net-(ESP-1-Pad5)" "Net-(ESP-1-Pad6)" "Net-(ESP-1-Pad8)" "Net-(ESP1-Pad2)" "Net-(ESP1-Pad3)" "Net-(ESP1-Pad4)" "Net-(IC1-Pad1)"
+    "Net-(IC1-Pad4)" "Net-(IC1-Pad5)" "Net-(IC1-Pad12)" "Net-(IC1-Pad13)" "Net-(IC1-Pad14)" "Net-(IC1-Pad15)" "Net-(IC1-Pad17)" "Net-(IC1-Pad18)"
+    "Net-(IC1-Pad19)" "Net-(LED-1-Pad1)" "Net-(LED-1-Pad4)" "Net-(LED-2-Pad1)" "Net-(LED-2-Pad4)" "Net-(LED-3-Pad1)" "Net-(LED-3-Pad4)" "Net-(LED-4-Pad1)"
+    "Net-(LED-4-Pad4)" "Net-(LED-5-Pad1)" "Net-(LED-5-Pad4)" "Net-(LED-6-Pad1)" "Net-(LED-6-Pad4)" "Net-(LED-7-Pad1)" "Net-(LED-7-Pad4)" "Net-(LED-8-Pad1)"
+    "Net-(LED-8-Pad4)" "Net-(LED-9-Pad1)" "Net-(LED-9-Pad4)"
+    (clearance_class "kicad_default")
+    (via_rule kicad_default)
+    (rule
+      (width 250.0)
+    )
+    (circuit 
+      (use_layer F.Cu B.Cu)
+    )
+  )
+  (class POWAR
+    GND +5V
+    (clearance_class POWAR)
+    (via_rule POWAR)
+    (rule
+      (width 400.0)
+    )
+    (circuit 
+      (use_layer F.Cu B.Cu)
+    )
+  )
+)
